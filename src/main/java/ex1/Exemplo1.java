@@ -1,4 +1,4 @@
-package bcd;
+package ex1;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -84,10 +84,10 @@ public class Exemplo1 {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println("Informe um e-mail: ");
-        String email = teclado.next();
+        String email = teclado.nextLine();
 
         String query = "SELECT * FROM aluno WHERE email = '" + email + "'";
-
+        //System.out.println(query);
         ResultSet linhas = stmt.executeQuery(query);
 
         printarLinhas(linhas);
@@ -99,5 +99,6 @@ public class Exemplo1 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         //listarRegistros();
         buscar();
+        //inserir();
     }
 }
